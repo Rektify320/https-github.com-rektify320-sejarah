@@ -14,13 +14,13 @@
     {
       "name": "PUTRA",
       "points": 30,
-      "hp": 65,
+      "hp": 50,
       "completedQuests": [
         "PE_BG003"
       ],
       "history": [],
       "createdAt": "2026-10-01T05:54:49.576Z",
-      "lastUpdated": "2026-10-01T05:55:49.630Z"
+      "lastUpdated": "2026-10-01T06:36:18.080Z"
     }
   ]
 }

@@ -136,38 +136,6 @@ class HistoryQuestManager {
     }
   }
 
-  getLocalLeaderboard() {
-    try {
-      const raw = localStorage.getItem('sejarah_leaderboard');
-      const data = raw ? JSON.parse(raw) : [];
-      return Array.isArray(data) ? data : [];
-    } catch (e) {
-      return [];
-    }
-  }
-
-  syncLocalLeaderboard() {
-    if (!this.player.name) return;
-
-    try {
-      const records = this.getLocalLeaderboard();
-      const clean = records.filter(record => record && record.name && record.name.toLowerCase() !== this.player.name.toLowerCase());
-      clean.push({
-        name: this.player.name,
-        points: this.player.points,
-        hp: this.player.hp,
-        completedQuests: this.player.completedQuests,
-        history: this.player.history,
-        updatedAt: new Date().toISOString()
-      });
-
-      const sorted = clean.sort((a, b) => (Number(b.points) || 0) - (Number(a.points) || 0));
-      localStorage.setItem('sejarah_leaderboard', JSON.stringify(sorted.slice(0, 50)));
-    } catch (e) {
-      console.warn('Failed to sync local leaderboard:', e);
-    }
-  }
-
   async fetchPlayerFromDatabase(name) {
     try {
       const res = await fetch(`/api/player?name=${encodeURIComponent(name)}`);
@@ -184,23 +152,10 @@ class HistoryQuestManager {
           }
           this.updateHUD();
           this.saveLocal();
-          this.syncLocalLeaderboard();
         }
       }
     } catch (err) {
-      const records = this.getLocalLeaderboard();
-      const existing = records.find(player => player && player.name && player.name.toLowerCase() === name.toLowerCase());
-      if (existing) {
-        this.player.points = Math.max(this.player.points, Number(existing.points) || 0);
-        if (existing.hp !== undefined && existing.hp > 0) {
-          this.player.hp = Math.min(100, Math.max(20, Number(existing.hp)));
-        }
-        if (Array.isArray(existing.completedQuests)) {
-          const set = new Set([...this.player.completedQuests, ...existing.completedQuests]);
-          this.player.completedQuests = Array.from(set);
-        }
-        this.updateHUD();
-      }
+      // offline fallback
     }
   }
 
@@ -213,7 +168,6 @@ class HistoryQuestManager {
       history: this.player.history,
       lastUpdated: new Date().toISOString()
     }));
-    this.syncLocalLeaderboard();
   }
 
   async savePlayerToDatabase() {
@@ -233,7 +187,7 @@ class HistoryQuestManager {
         })
       });
     } catch (err) {
-      // offline fallback: data already saved to browser localStorage
+      // offline fallback
     }
   }
 
@@ -725,7 +679,7 @@ class HistoryQuestManager {
     const listEl = document.getElementById('leaderboardList');
     if (!modal || !listEl) return;
 
-    listEl.innerHTML = `<div style="text-align: center; padding: 20px; color: #a4b0be;">Memuat data peringkat lokal...</div>`;
+    listEl.innerHTML = `<div style="text-align: center; padding: 20px; color: #a4b0be;">Memuat data peringkat dari database...</div>`;
     modal.classList.add('open');
 
     try {
@@ -733,48 +687,31 @@ class HistoryQuestManager {
       if (res.ok) {
         const data = await res.json();
         const players = (data && data.leaderboard) ? data.leaderboard : [];
-        if (players.length > 0) {
-          let html = '<div class="leaderboard-table">';
-          players.forEach((p, idx) => {
-            const rankMedal = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : (idx === 2 ? '🥉' : `#${idx + 1}`));
-            const isCurrent = (p.name.toLowerCase() === (this.player.name || '').toLowerCase());
-            html += `
-              <div class="leaderboard-row ${isCurrent ? 'current-player' : ''}">
-                <div class="lb-rank">${rankMedal}</div>
-                <div class="lb-name"><strong>${p.name}</strong> ${isCurrent ? '<span class="lb-you-badge">(Kamu)</span>' : ''}</div>
-                <div class="lb-points">⭐ ${p.points || 0} Poin</div>
-              </div>
-            `;
-          });
-          html += '</div>';
-          listEl.innerHTML = html;
+        if (players.length === 0) {
+          listEl.innerHTML = `<div style="text-align: center; padding: 20px;">Belum ada data pemain lain di database. Jadilah yang pertama!</div>`;
           return;
         }
+
+        let html = '<div class="leaderboard-table">';
+        players.forEach((p, idx) => {
+          const rankMedal = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : (idx === 2 ? '🥉' : `#${idx + 1}`));
+          const isCurrent = (p.name.toLowerCase() === (this.player.name || '').toLowerCase());
+          html += `
+            <div class="leaderboard-row ${isCurrent ? 'current-player' : ''}">
+              <div class="lb-rank">${rankMedal}</div>
+              <div class="lb-name"><strong>${p.name}</strong> ${isCurrent ? '<span class="lb-you-badge">(Kamu)</span>' : ''}</div>
+              <div class="lb-points">⭐ ${p.points || 0} Poin</div>
+            </div>
+          `;
+        });
+        html += '</div>';
+        listEl.innerHTML = html;
+      } else {
+        listEl.innerHTML = `<div style="text-align: center; padding: 20px;">Gagal terhubung ke database. Poin kamu tersimpan di perangkat lokal: ${this.player.points} Poin.</div>`;
       }
     } catch (e) {
-      // offline fallback below
+      listEl.innerHTML = `<div style="text-align: center; padding: 20px;">Mode offline. Poin kamu tersimpan di penyimpanan lokal: ${this.player.points} Poin.</div>`;
     }
-
-    const localPlayers = this.getLocalLeaderboard();
-    if (localPlayers.length === 0) {
-      listEl.innerHTML = `<div style="text-align: center; padding: 20px;">Belum ada data pemain lokal. Jadilah yang pertama!</div>`;
-      return;
-    }
-
-    let html = '<div class="leaderboard-table">';
-    localPlayers.forEach((p, idx) => {
-      const rankMedal = idx === 0 ? '🥇' : (idx === 1 ? '🥈' : (idx === 2 ? '🥉' : `#${idx + 1}`));
-      const isCurrent = (p.name.toLowerCase() === (this.player.name || '').toLowerCase());
-      html += `
-        <div class="leaderboard-row ${isCurrent ? 'current-player' : ''}">
-          <div class="lb-rank">${rankMedal}</div>
-          <div class="lb-name"><strong>${p.name}</strong> ${isCurrent ? '<span class="lb-you-badge">(Kamu)</span>' : ''}</div>
-          <div class="lb-points">⭐ ${p.points || 0} Poin</div>
-        </div>
-      `;
-    });
-    html += '</div>';
-    listEl.innerHTML = html;
   }
 
   bindEvents() {
