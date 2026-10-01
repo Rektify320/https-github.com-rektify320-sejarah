@@ -30,15 +30,36 @@ git init
 git remote add origin https://github.com/NAMA_USER/NAMA_REPO.git
 git add .
 git commit -m "Initial commit"
-git branch -M master
-git push -u origin master
+git branch -M main
+git push -u origin main
 ```
 
-Jika repo GitHub Anda menggunakan branch `main`, ganti `master` dengan `main`.
+Jika repo GitHub Anda sudah ada dan Anda ingin memperbarui, cukup jalankan:
+
+```bash
+git add .
+git commit -m "Update game"
+git push origin main
+```
 
 ## Deploy ke GitHub Pages
 
-Untuk hosting statis, aktifkan GitHub Pages pada repository dan pilih branch yang berisi file HTML/CSS/JS, atau gunakan branch `gh-pages` jika Anda mengatur sendiri.
+Game ini sudah dibuat agar bisa dipublikasikan dengan GitHub Pages secara statis.
+
+Langkahnya:
+
+1. Upload project ke repository GitHub.
+2. Buka repository di GitHub.
+3. Masuk ke Settings -> Pages.
+4. Pada Source pilih `Deploy from a branch`.
+5. Pilih branch `main` dan folder `/root`.
+6. Simpan.
+7. GitHub akan memberikan URL publik seperti:
+   `https://username.github.io/nama-repo/`
+
+Catatan penting:
+- Game ini tidak memerlukan backend Node.js saat dipublikasi.
+- Penyimpanan pemain dan leaderboard disimpan di browser menggunakan `localStorage`, agar bisa berjalan di GitHub Pages.
 
 ## Struktur utama
 - `index.html` : halaman utama
