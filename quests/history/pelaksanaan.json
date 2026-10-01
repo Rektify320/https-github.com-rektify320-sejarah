@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_PL001",
+    "category": "PELAKSANAAN",
+    "difficulty": "EASY",
+    "title": "Dilema Realitas Lapangan",
+    "story": "Meskipun di atas kertas bertujuan mulia menyejahterakan rakyat, pelaksanaan Politik Etis di lapangan banyak mengalami penyimpangan oleh pejabat kolonial.",
+    "question": "Bagaimana penyimpangan yang terjadi pada pelaksanaan program Irigasi di lapangan?",
+    "options": [
+      "Saluran air irigasi diutamakan mengaliri perkebunan milik pengusaha Belanda, sementara sawah rakyat hanya mendapat sisa aliran air",
+      "Air irigasi sama sekali tidak dialirkan ke lahan mana pun dan sengaja dibuang ke laut",
+      "Petani pribumi dilarang meminum air bersih dari sumur desa",
+      "Pemerintah kolonial membagi air secara gratis dan adil tanpa memungut pajak apa pun"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Dalam praktiknya terjadi diskriminasi air: perkebunan tebu dan tembakau milik swasta Belanda mendapat jatah air utama di siang hari, sedangkan sawah rakyat Pak Kromo sering kekurangan air."
+  },
+  {
+    "id": "PE_PL002",
+    "category": "PELAKSANAAN",
+    "difficulty": "MEDIUM",
+    "title": "Penyimpangan Sektor Edukasi",
+    "story": "Sekolah-sekolah memang didirikan oleh pemerintah Hindia Belanda, namun tujuan di balik pembukaan sekolah tersebut ternyata sangat berorientasi pada kepentingan birokrasi kolonial.",
+    "question": "Apa bentuk penyimpangan utama dalam pelaksanaan program Edukasi?",
+    "options": [
+      "Pendidikan diarahkan untuk mencetak tenaga kerja rendahan (ambtenaar) yang terampil namun dapat digaji sangat murah oleh pemerintah kolonial",
+      "Hanya anak-anak petani miskin yang diperbolehkan belajar di sekolah tinggi Belanda",
+      "Pemerintah Belanda memaksa seluruh siswa belajar militer dan perang ke Eropa",
+      "Seluruh lulusan sekolah langsung diangkat menjadi Gubernur Jenderal Hindia Belanda"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Sekolah kolonial didirikan utamanya untuk memenuhi kebutuhan juru tulis, mandor, dan pegawai administrasi perkebunan yang terdidik tetapi dengan standar upah murah meriah."
+  },
+  {
+    "id": "PE_PL003",
+    "category": "PELAKSANAAN",
+    "difficulty": "HARD",
+    "title": "Sisi Gelap Transmigrasi & Kuli Deli",
+    "story": "Ribuan warga dari desa-desa di Pulau Jawa diberangkatkan ke perkebunan tembakau Deli di Sumatra Timur. Di sana mereka diikat oleh aturan kerja paksa yang sangat menekan.",
+    "question": "Peraturan kejam apakah yang digunakan mandor perkebunan untuk menghukum kuli kontrak yang mencoba kabur dari perkebunan Deli?",
+    "options": [
+      "Poenale Sanctie (Sanksi Pidana Kuli)",
+      "Cultuur Procenten (Persentase Hasil Tanam)",
+      "Hongitochten (Pelayaran Ekspedisi Hongi)",
+      "Agrarische Wet (Undang-Undang Agraria)"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Poenale Sanctie adalah sanksi hukum pidana berupa cambukan dan kerja paksa yang diterapkan pemilik perkebunan terhadap kuli kontrak yang melanggar ikatan kerja atau melarikan diri."
+  },
+  {
+    "id": "PE_PL004",
+    "category": "PELAKSANAAN",
+    "difficulty": "EASY",
+    "title": "Diskriminasi Bangku Pendidikan",
+    "story": "Pemerintah kolonial menerapkan sistem segregasi atau pemisahan sekolah antara golongan Eropa, bangsawan pribumi, dan rakyat jelata.",
+    "question": "Sekolah elit berbahasa Belanda yang hanya diperuntukkan bagi anak keturunan Eropa dan bangsawan tinggi pribumi adalah...",
+    "options": [
+      "ELS (Europeesche Lagere School)",
+      "Sekolah Desa 3 Tahun",
+      "Sekolah Ongko Loro",
+      "Pesantren Rakyat"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "ELS (Europeesche Lagere School) adalah sekolah dasar mewah berbahasa pengantar Belanda yang sangat tertutup bagi rakyat biasa."
+  },
+  {
+    "id": "PE_PL005",
+    "category": "PELAKSANAAN",
+    "difficulty": "MEDIUM",
+    "title": "Pajak Kepala dan Kerja Wajib",
+    "story": "Meskipun Politik Etis berjalan, beban kewajiban finansial dan kerja wajib rakyat pedesaan tetap sangat berat.",
+    "question": "Beban kerja tanpa upah yang tetap dibebankan kepada petani untuk membangun jalan dan infrastruktur kolonial disebut...",
+    "options": [
+      "Kerja Rodi / Heerendiensten",
+      "Siskamling",
+      "Gotong Royong Desa",
+      "Wajib Militer Sukarela"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Praktek Heerendiensten (kerja wajib tanpa bayaran) masih terus diberlakukan oleh pejabat kolonial sehingga menimbulkan kekecewaan luas."
+  },
+  {
+    "id": "PE_PL006",
+    "category": "PELAKSANAAN",
+    "difficulty": "HARD",
+    "title": "Kritik Kaum Sosialis Belanda",
+    "story": "Di Belanda sendiri, kelompok sosialis dan etisi garis keras mengkritik bahwa Politik Etis telah dibajak oleh kaum kapitalis perkebunan swasta.",
+    "question": "Mengapa kaum etisi radikal di parlemen Den Haag mengkritik implementasi Politik Etis?",
+    "options": [
+      "Karena dana kesejahteraan justru banyak mengalir untuk menyubsidi fasilitas perusahaan perkebunan swasta Belanda",
+      "Karena anggaran Politik Etis seluruhnya disumbangkan ke negara lain di Amerika Latin",
+      "Karena Belanda tidak lagi membeli hasil panen kopi dari Hindia",
+      "Karena rakyat Jawa menolak bersekolah secara serentak"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Banyak anggaran irigasi dan infrastruktur jalan raya yang dialokasikan ternyata lebih banyak menguntungkan korporasi swasta Belanda (kapitalisme kolonial) daripada rakyat biasa."
+  }
+]

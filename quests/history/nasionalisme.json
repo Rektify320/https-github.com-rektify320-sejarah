@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_NS001",
+    "category": "NASIONALISME",
+    "difficulty": "EASY",
+    "title": "Fajar Kebangkitan Nasional 1908",
+    "story": "Pada tanggal 20 Mei 1908 di sebuah ruang kelas gedung STOVIA Batavia, para pemuda pelajar kedokteran berkumpul mendirikan sebuah perhimpunan bersejarah.",
+    "question": "Organisasi pergerakan modern pertama di Indonesia yang didirikan pada tanggal 20 Mei 1908 dan menjadi tonggak Kebangkitan Nasional adalah...",
+    "options": [
+      "Budi Utomo",
+      "Sarekat Dagang Islam",
+      "Indische Partij",
+      "Perhimpunan Indonesia"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Budi Utomo didirikan oleh dr. Soetomo dan para mahasiswa STOVIA atas gagasan dr. Wahidin Soedirohoesodo pada 20 Mei 1908 (diperingati sebagai Hari Kebangkitan Nasional)."
+  },
+  {
+    "id": "PE_NS002",
+    "category": "NASIONALISME",
+    "difficulty": "MEDIUM",
+    "title": "Senjata Makan Tuan bagi Penjajah",
+    "story": "Pemerintah kolonial Belanda tidak menduga bahwa kebijakan pendidikan yang mereka rancang justru menjadi bumerang besar yang menggoyahkan fondasi kekuasaan kolonial.",
+    "question": "Mengapa Politik Etis kerap dijuluki sebagai 'Senjata Makan Tuan' bagi pemerintah kolonial Belanda?",
+    "options": [
+      "Pendidikan yang dibuka justru melahirkan kaum intelektual terpelajar yang menyadari penindasan dan memimpin gerakan kemerdekaan",
+      "Para tentara KNIL membelot dan menggunakan senjata Belanda untuk menyerang benteng mereka sendiri",
+      "Bendungan air yang dibangun jebol dan menenggelamkan kantor pusat VOC",
+      "Pabrik senjata di Batavia mengalami ledakan yang melenyapkan seluruh amunisi Belanda"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Disebut senjata makan tuan karena niat Belanda mencetak pegawai rendahan justru melahirkan pemikir-pemikir kritis yang menyatukan bangsa melawan penjajahan."
+  },
+  {
+    "id": "PE_NS003",
+    "category": "NASIONALISME",
+    "difficulty": "HARD",
+    "title": "Transformasi Bentuk Perjuangan",
+    "story": "Sebelum abad ke-20, perlawanan rakyat Indonesia terhadap penjajah umumnya bersifat kedaerahan, dipimpin bangsawan atau tokoh agama karismatik, dan mudah dipatahkan.",
+    "question": "Bagaimanakah perbedaan mendasar sifat perjuangan bangsa Indonesia SETELAH lahirnya kaum terpelajar era Politik Etis dibandingkan masa sebelumnya?",
+    "options": [
+      "Perjuangan beralih menggunakan organisasi modern, berwawasan nasional, menggunakan diplomasi pemikiran, dan tidak lagi bergantung pada satu sosok pemimpin",
+      "Perjuangan hanya dilakukan melalui perang gerilya di hutan tanpa melibatkan masyarakat kota",
+      "Rakyat Indonesia meminta bantuan militer dari negara-negara penjajah lainnya",
+      "Perjuangan membatasi diri hanya untuk membela daerah asal masing-masing suku"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Setelah era Politik Etis, perjuangan bangsa Indonesia bertransformasi dari perlawanan fisik kedaerahan menjadi gerakan terorganisasi secara modern, berideologi nasional, dan mencakup seluruh persatuan Nusantara."
+  },
+  {
+    "id": "PE_NS004",
+    "category": "NASIONALISME",
+    "difficulty": "EASY",
+    "title": "Tokoh Penggagas Studiefonds (Dana Pendidikan)",
+    "story": "Seorang dokter priyayi senior berkeliling Pulau Jawa menggalang dana beasiswa bagi pemuda bumiputra cerdas yang terhambat biaya pendidikan.",
+    "question": "Siapakah dokter priyayi penggagas dana pendidikan (studiefonds) yang menginspirasi pendirian Budi Utomo?",
+    "options": [
+      "dr. Wahidin Soedirohoesodo",
+      "dr. Tjipto Mangoenkoesoemo",
+      "Ki Hajar Dewantara",
+      "H.O.S. Tjokroaminoto"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "dr. Wahidin Soedirohoesodo memprakarsai kampanye pengumpulan dana pendidikan dan memotivasi para pelajar STOVIA di Batavia untuk bersatu."
+  },
+  {
+    "id": "PE_NS005",
+    "category": "NASIONALISME",
+    "difficulty": "MEDIUM",
+    "title": "Tiga Serangkai & Indische Partij",
+    "story": "Pada tahun 1912 berdiri organisasi politik pertama di Indonesia yang secara terang-terangan menuntut kemerdekaan dari penjajahan Belanda.",
+    "question": "Organisasi politik pertama yang dipimpin oleh 'Tiga Serangkai' (Douwes Dekker, Suwardi Suryaningrat, Tjipto Mangoenkoesoemo) adalah...",
+    "options": [
+      "Indische Partij",
+      "Sarekat Islam",
+      "Partai Nasional Indonesia",
+      "Gerakan Indonesia Muda"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Indische Partij (1912) adalah organisasi politik murni pertama di Hindia Belanda yang mengusung slogan 'Indie voor Indiers' (Hindia untuk orang Hindia)."
+  },
+  {
+    "id": "PE_NS006",
+    "category": "NASIONALISME",
+    "difficulty": "HARD",
+    "title": "Pamflet Satire Suwardi Suryaningrat",
+    "story": "Pada tahun 1913, Belanda berencana merayakan 100 tahun kemerdekaannya dari Prancis dengan menarik uang sumbangan dari rakyat jajahan.",
+    "question": "Apa judul pamflet protes menggemparkan yang ditulis Suwardi Suryaningrat (Ki Hajar Dewantara) untuk mengecam rencana perayaan Belanda tersebut?",
+    "options": [
+      "Als Ik Eens Nederlander Was (Andai Aku Seorang Belanda)",
+      "Habis Gelap Terbitlah Terang",
+      "Max Havelaar",
+      "Een Eereschuld"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Pamflet 'Als Ik Eens Nederlander Was' (1913) secara pedas mengecam ironi Belanda yang ingin merayakan kemerdekaan di atas tanah bangsa yang sedang dijajahnya."
+  }
+]

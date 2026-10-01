@@ -1,0 +1,11 @@
+{
+  "name": "sejarah-nusantara-game",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node server.js",
+    "login": "npx vercel login",
+    "deploy": "npx vercel --prod",
+    "logout": "npx vercel logout"
+  }
+}

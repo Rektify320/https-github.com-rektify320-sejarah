@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_BG001",
+    "category": "BACKGROUND",
+    "difficulty": "EASY",
+    "title": "Jejak Balas Budi & Utang Kehormatan",
+    "story": "Pada akhir abad ke-19, suara keras mulai menggema di kalangan politisi dan intelektual Belanda mengecam penderitaan rakyat jajahan akibat sistem Tanam Paksa (Cultuurstelsel).",
+    "question": "Apa salah satu latar belakang utama dicetuskannya kebijakan Politik Etis oleh pemerintah kolonial Belanda?",
+    "options": [
+      "Kritik keras terhadap eksploitasi kolonial dan keprihatinan atas penderitaan rakyat pribumi",
+      "Keinginan Belanda untuk segera memberikan kemerdekaan penuh bagi Indonesia",
+      "Tuntutan negara-negara Eropa agar Belanda menyerahkan seluruh tanah Hindia ke Inggris",
+      "Kekalahan telak tentara Belanda dalam perang melawan pasukan Jepang"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Politik Etis (Politik Balas Budi) lahir dari gelombang kritik moral terhadap penindasan Tanam Paksa dan kemerosotan kesejahteraan rakyat pribumi di Hindia Belanda."
+  },
+  {
+    "id": "PE_BG002",
+    "category": "BACKGROUND",
+    "difficulty": "MEDIUM",
+    "title": "Gugatan Lewat De Gids",
+    "story": "Sebuah artikel hukum dan ekonomi terbit pada majalah terkemuka Belanda 'De Gids' tahun 1899, menghitung bahwa Belanda telah menikmati jutaan gulden surplus kekayaan dari Hindia Belanda.",
+    "question": "Apa judul artikel terkenal karangan Mr. C.Th. van Deventer tahun 1899 yang menjadi tonggak lahirnya Politik Etis?",
+    "options": [
+      "Een Eereschuld (Utang Kehormatan)",
+      "Max Havelaar (Lelang Kopi Dagang Belanda)",
+      "Als Ik Eens Nederlander Was (Andai Aku Seorang Belanda)",
+      "Suikerkontrakten en Arbeid (Kontrak Gula dan Tenaga Kerja)"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Artikel 'Een Eereschuld' (Utang Kehormatan) karya C.Th. van Deventer menegaskan bahwa negeri Belanda berutang budi moral kepada rakyat Nusantara dan wajib mengembalikannya lewat kesejahteraan."
+  },
+  {
+    "id": "PE_BG003",
+    "category": "BACKGROUND",
+    "difficulty": "HARD",
+    "title": "Kekhawatiran Kolonial",
+    "story": "Selain alasan moral dan etika kemanusiaan, para pejabat Den Haag juga memperhitungkan stabilitas ekonomi jangka panjang di tanah jajahan.",
+    "question": "Mengapa pemerintah kolonial Belanda secara pragmatis merasa perlu menerapkan kebijakan balas budi pada awal abad ke-20?",
+    "options": [
+      "Kondisi kemiskinan ekstrem rakyat dikhawatirkan memicu pemberontakan massal dan menurunkan daya beli pasar",
+      "Belanda ingin memindahkan seluruh ibu kota kerajaannya dari Amsterdam ke Batavia",
+      "Pemerintah kolonial ingin mengganti seluruh komoditas perkebunan menjadi industri teknologi berat",
+      "Adanya desakan dari Perserikatan Bangsa-Bangsa (PBB) yang saat itu baru didirikan"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Selain faktor etis, Belanda cemas kemiskinan dan kelaparan hebat di Jawa akan meruntuhkan ketertiban kolonial serta melemahkan daya beli komoditas dagang Belanda."
+  },
+  {
+    "id": "PE_BG004",
+    "category": "BACKGROUND",
+    "difficulty": "EASY",
+    "title": "Bencana Kelaparan di Pulau Jawa",
+    "story": "Pada dekade 1880–1890an terjadi bencana kelaparan dan wabah penyakit hebat di Grobogan dan Demak yang menyentak kesadaran publik humanis Belanda.",
+    "question": "Kondisi memilukan apa di tanah Jawa yang memicu desakan keras diterapkannya Politik Balas Budi?",
+    "options": [
+      "Bencana kelaparan parah dan kemiskinan akut di Grobogan serta daerah pedalaman Jawa",
+      "Terjadinya tsunami besar yang menenggelamkan seluruh pantai utara Jawa",
+      "Serangan bajak laut dari benua Afrika ke pelabuhan Sunda Kelapa",
+      "Kegagalan total panen gandum di seluruh daratan Eropa"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Tragedi kelaparan dan kemiskinan akut di Demak dan Grobogan membuktikan bahwa eksploitasi Tanam Paksa telah memorak-porandakan kehidupan petani Nusantara."
+  },
+  {
+    "id": "PE_BG005",
+    "category": "BACKGROUND",
+    "difficulty": "MEDIUM",
+    "title": "Batig Slot & Surplus Finansial",
+    "story": "Dalam perdebatannya, Van Deventer membuktikan bahwa anggaran belanja negeri Belanda bertahun-tahun ditopang oleh surplus keuntungan finansial dari tanah jajahan.",
+    "question": "Istilah Belanda untuk surplus keuntungan kas kolonial yang dibawa ke negeri Belanda adalah...",
+    "options": [
+      "Batig Slot",
+      "Cultuurstelsel",
+      "Verplichte Leverantie",
+      "Poenale Sanctie"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Batig Slot adalah istilah untuk keuntungan bersih kas perbendaharaan Hindia Belanda yang ditransfer langsung ke kas negeri Belanda."
+  },
+  {
+    "id": "PE_BG006",
+    "category": "BACKGROUND",
+    "difficulty": "HARD",
+    "title": "Tahun Dimulainya Politik Etis",
+    "story": "Ratu Wilhelmina membacakan pidato resmi kerajaan di Den Haag yang menandai dimulainya era baru Politik Balas Budi secara resmi.",
+    "question": "Tahun berapakah Politik Etis secara resmi diberlakukan oleh pemerintah Kerajaan Belanda?",
+    "options": [
+      "1901",
+      "1890",
+      "1928",
+      "1808"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Politik Etis secara resmi dicanangkan pada September 1901 melalui Pidato Takhta (Troonrede) Ratu Wilhelmina."
+  }
+]

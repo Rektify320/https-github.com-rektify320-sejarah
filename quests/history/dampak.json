@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_DP001",
+    "category": "DAMPAK",
+    "difficulty": "EASY",
+    "title": "Terbitnya Fajar Pemikiran Baru",
+    "story": "Meskipun Belanda bermaksud mencetak tenaga pegawai murah, terbukanya akses pendidikan modern membawa berkah tak terduga bagi kemajuan pola pikir pemuda pribumi.",
+    "question": "Apa dampak positif paling signifikan dari program pendidikan Politik Etis bagi bangsa Indonesia?",
+    "options": [
+      "Munculnya golongan terpelajar / cendekiawan yang memiliki wawasan luas dan kesadaran kritis",
+      "Seluruh rakyat Indonesia secara otomatis memperoleh kewarganegaraan negeri Belanda",
+      "Pemerintah kolonial menyerahkan seluruh kekuasaan politik kepada para bupati secara sukarela",
+      "Berhentinya seluruh aktivitas perdagangan antarpulau di kawasan kepulauan Nusantara"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Dampak terbesar dari Politik Etis adalah terlahirkannya generasi terpelajar bumiputra yang kelak memimpin organisasi pergerakan kemerdekaan."
+  },
+  {
+    "id": "PE_DP002",
+    "category": "DAMPAK",
+    "difficulty": "MEDIUM",
+    "title": "Perkembangan di Empat Bidang",
+    "story": "Politik Etis memberikan pengaruh nyata yang mencakup bidang ekonomi, sosial, pendidikan, dan politik di Hindia Belanda.",
+    "question": "Di bidang ekonomi dan pertanian, bagaimana dampak pembangunan saluran irigasi Politik Etis bagi masyarakat lokal?",
+    "options": [
+      "Memperkenalkan teknik pengairan modern dan membuka lahan persawahan baru meski distribusi air masih sering timpang",
+      "Menghancurkan seluruh sistem sawah terasering tradisional Nusantara",
+      "Menyebabkan kekeringan total di seluruh pelosok Pulau Jawa selama 50 tahun",
+      "Mengharuskan rakyat hanya memakan gandum impor dari Eropa"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Di bidang ekonomi, sistem irigasi memperkenalkan teknologi pengairan modern yang membantu perluasan sawah rakyat dan mencegah gagal panen, kendati perkebunan Belanda tetap diprioritaskan."
+  },
+  {
+    "id": "PE_DP003",
+    "category": "DAMPAK",
+    "difficulty": "HARD",
+    "title": "Suara Emansipasi Perempuan Bumiputra",
+    "story": "Di Jepara dan Rembang, seorang putri bupati berkorespondensi dengan sahabat-sahabatnya di Eropa, menyuarakan jeritan wanita yang terbelenggu adat feodal.",
+    "question": "Tokoh pahlawan wanita yang memanfaatkan era keterbukaan Politik Etis untuk memperjuangkan pendidikan bagi kaum perempuan adalah...",
+    "options": [
+      "Raden Ajeng Kartini",
+      "Cut Nyak Dien",
+      "Martha Christina Tiahahu",
+      "Laksamana Malahayati"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "R.A. Kartini memperjuangkan emansipasi dan sekolah bagi kaum perempuan bumiputra melalui gagasan modernnya yang dihimpun dalam 'Habis Gelap Terbitlah Terang'."
+  },
+  {
+    "id": "PE_DP004",
+    "category": "DAMPAK",
+    "difficulty": "EASY",
+    "title": "Munculnya Pers Bumiputra",
+    "story": "Golongan terpelajar tidak hanya bekerja sebagai birokrat, tetapi juga mulai menerbitkan surat kabar sendiri untuk menyuarakan aspirasi rakyat.",
+    "question": "Tokoh wartawan perintis yang dijuluki Bapak Pers Nasional dan mendirikan surat kabar Medan Prijaji (1907) adalah...",
+    "options": [
+      "Tirto Adhi Soerjo (Raden Mas Djokomono)",
+      "Mohammad Yamin",
+      "Sayuti Melik",
+      "Chairil Anwar"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "R.M. Tirto Adhi Soerjo adalah pelopor jurnalisme pribumi pertama melalui koran 'Medan Prijaji' yang diterbitkan dan dikelola sepenuhnya oleh orang bumiputra."
+  },
+  {
+    "id": "PE_DP005",
+    "category": "DAMPAK",
+    "difficulty": "MEDIUM",
+    "title": "Mobilitas Sosial Kaum Terpelajar",
+    "story": "Sebelum era Politik Etis, kedudukan sosial seseorang mutlak ditentukan oleh keturunan darah biru (bangsawan feodal).",
+    "question": "Bagaimanakah Politik Etis mengubah struktur penentuan status sosial dalam masyarakat Indonesia?",
+    "options": [
+      "Status sosial mulai ditentukan oleh tingkat pendidikan, keahlian profesi, dan ijazah, bukan semata-mata garis darah bangsawan",
+      "Seluruh rakyat diwajibkan menjadi anggota kerajaan Belanda",
+      "Gelar kebangsawanan dihapuskan oleh hukum internasional",
+      "Masyarakat dilarang memiliki harta kekayaan pribadi"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Pendidikan melahirkan mobilitas sosial baru: anak rakyat biasa yang berhasil lulus sekolah kedokteran atau keguruan dihargai tinggi di tengah masyarakat modern."
+  },
+  {
+    "id": "PE_DP006",
+    "category": "DAMPAK",
+    "difficulty": "HARD",
+    "title": "Integrasi Antaretnis Melalui Transmigrasi",
+    "story": "Perpindahan penduduk dari Jawa ke wilayah Sumatra melahirkan perjumpaan kebudayaan baru antardaerah Nusantara.",
+    "question": "Apa dampak sosiologis jangka panjang dari program pemindahan penduduk era Politik Etis?",
+    "options": [
+      "Terjalinnya interaksi dan integrasi kebudayaan antaretnis yang memperkuat rasa senasib sepenanggungan sebagai satu bangsa",
+      "Terputusnya hubungan komunikasi total antara pulau Jawa dan Sumatra",
+      "Punahnya bahasa Melayu di kepulauan Nusantara",
+      "Terbentuknya perbatasan negara merdeka baru di Pulau Sumatra"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Transmigrasi mempertemukan berbagai suku dari Jawa, Sunda, dan Melayu di perantauan, mengikis sekat kedaerahan dan mempercepat rasa persatuan nasional."
+  }
+]

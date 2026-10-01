@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_TK001",
+    "category": "TOKOH",
+    "difficulty": "EASY",
+    "title": "Sosok Pencetus Trias Van Deventer",
+    "story": "Seorang ahli hukum Belanda merumuskan trilogi pemikiran untuk membalas budi rakyat Indonesia melalui perbaikan saluran air, pendidikan, dan pemindahan warga.",
+    "question": "Siapakah tokoh yang merumuskan konsep trilogi Politik Etis (Irigasi, Edukasi, Emigrasi)?",
+    "options": [
+      "Conrad Theodor van Deventer",
+      "Johannes van den Bosch",
+      "Herman Willem Daendels",
+      "Cornelis de Houtman"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Mr. C.Th. van Deventer adalah perumus konsep Trias Van Deventer yang terdiri dari Irigasi, Edukasi, dan Emigrasi/Transmigrasi."
+  },
+  {
+    "id": "PE_TK002",
+    "category": "TOKOH",
+    "difficulty": "MEDIUM",
+    "title": "Pena Tajam Sang Mantan Asisten Residen",
+    "story": "Seorang mantan asisten residen Lebak Banten menulis sebuah novel satire legendaris dengan nama pena Multatuli yang mengguncang nurani masyarakat Eropa.",
+    "question": "Siapakah nama asli dari Multatuli, penulis roman sejarah Max Havelaar?",
+    "options": [
+      "Eduard Douwes Dekker",
+      "Ernest Douwes Dekker (Danudirja Setiabudi)",
+      "Pieter Brooshooft",
+      "Baron van Hoëvell"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Eduard Douwes Dekker memakai nama samaran Multatuli (artinya 'aku telah banyak menderita') saat menulis novel Max Havelaar tahun 1860."
+  },
+  {
+    "id": "PE_TK003",
+    "category": "TOKOH",
+    "difficulty": "MEDIUM",
+    "title": "Suara Redaksi De Locomotief",
+    "story": "Di Semarang terbit koran terkemuka yang redakturnya aktif melakukan investigasi langsung ke desa-desa miskin di pedalaman Jawa.",
+    "question": "Siapakah wartawan sekaligus pemimpin redaksi koran De Locomotief yang gigih mengampanyekan Politik Etis?",
+    "options": [
+      "Pieter Brooshooft",
+      "L. van Limburg Stirum",
+      "Snouck Hurgronje",
+      "J.P. Coen"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Pieter Brooshooft adalah wartawan pejuang etis dari koran De Locomotief yang mengumpulkan bukti-bukti kemiskinan rakyat untuk diserahkan ke pemerintah Belanda."
+  },
+  {
+    "id": "PE_TK004",
+    "category": "TOKOH",
+    "difficulty": "HARD",
+    "title": "Pidato Takhta Sang Ratu (1901)",
+    "story": "Pada bulan September 1901 di Den Haag, sang ratu muda Belanda menyampaikan pidato resmi di hadapan parlemen (Staten-Generaal) mengenai kewajiban moral atas Hindia.",
+    "question": "Siapakah Ratu Belanda yang secara resmi mengumumkan pelaksanaan Politik Etis dalam Troonrede (Pidato Takhta) tahun 1901?",
+    "options": [
+      "Ratu Wilhelmina",
+      "Ratu Juliana",
+      "Ratu Beatrix",
+      "Ratu Emma"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Ratu Wilhelmina dalam Pidato Takhta September 1901 menyatakan bahwa Kerajaan Belanda memiliki panggilan moral dan utang budi (een eereschuld) kepada penduduk Hindia Belanda."
+  },
+  {
+    "id": "PE_TK005",
+    "category": "TOKOH",
+    "difficulty": "EASY",
+    "title": "Karakter Petani Saijah dan Adinda",
+    "story": "Dalam novel Max Havelaar, dikisahkan penderitaan sepasang kekasih di Lebak yang kerbaunya dirampas paksa oleh penguasa korup.",
+    "question": "Siapakah nama tokoh sepasang pemuda-pemudi desa dalam novel Max Havelaar yang menjadi simbol penderitaan rakyat Banten?",
+    "options": [
+      "Saijah dan Adinda",
+      "Roro Mendut dan Pronocitro",
+      "Sangkuriang dan Dayang Sumbi",
+      "Galih dan Ratna"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Kisah tragis Saijah dan Adinda dalam novel Max Havelaar membuka mata publik dunia tentang pemerasan brutal yang dialami rakyat kecil."
+  },
+  {
+    "id": "PE_TK006",
+    "category": "TOKOH",
+    "difficulty": "HARD",
+    "title": "Pahlawan Moral di Parlemen Belanda",
+    "story": "Jauh sebelum Van Deventer, seorang pendeta dan anggota parlemen Belanda pada tahun 1848 telah berani menyuarakan penderitaan bangsa Indonesia di mimbar Tweede Kamer.",
+    "question": "Siapakah tokoh pendeta dan politisi Belanda abad ke-19 yang memelopori perlawanan terhadap Tanam Paksa di parlemen Belanda?",
+    "options": [
+      "Baron van Hoëvell (W.R. van Hoëvell)",
+      "Frans van de Putte",
+      "Dirk van Hogendorp",
+      "Alexander Willem Frederik Idenburg"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Baron van Hoëvell adalah pendeta dan anggota parlemen Belanda yang dengan lantang membela hak-hak rakyat jajahan sejak tahun 1848."
+  }
+]

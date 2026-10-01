@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Trilogi Politik Etis & Akar Sejarah Nusantara - Game Eksplorasi 2D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="game-container">
+  <canvas id="worldCanvas"></canvas>
+
+  <div class="cinematic-bar top"></div>
+  <div class="cinematic-bar bottom"></div>
+
+  <!-- HUD -->
+  <div class="hud-layer" id="hudLayer">
+
+  <!-- GENSHIN TOP RPG COMPASS -->
+  <div class="rpg-compass-bar" id="rpgCompass">
+    <div class="compass-degree" id="compassDegree">085° E</div>
+    <div class="compass-strip">
+      <span>W</span> · <span>NW</span> · <span>N</span> · <span>NE</span> · <span class="compass-marker">E</span> · <span>SE</span> · <span>S</span>
+    </div>
+    <div class="compass-target-pill" id="compassTargetPill">
+      <span>◆</span> <span id="compassTargetName">Mr. Van Deventer</span> <span id="compassTargetDist">28m</span>
+    </div>
+  </div>
+
+  <!-- GENSHIN PAIMON / KALA COMPANION MENU BUTTON -->
+  <div class="paimon-btn-container">
+    <div class="paimon-avatar-btn" id="openPaimonBtn" title="Buka Menu Kala (Paimon Menu)">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="#ffeaa7" stroke="#e5c158" stroke-width="3"/>
+        <!-- Star eyes and cute halo -->
+        <polygon points="50,12 55,24 68,26 58,35 61,48 50,41 39,48 42,35 32,26 45,24" fill="#f39c12"/>
+        <ellipse cx="38" cy="52" rx="4" ry="6" fill="#2c3e50"/>
+        <ellipse cx="62" cy="52" rx="4" ry="6" fill="#2c3e50"/>
+        <ellipse cx="34" cy="56" rx="5" ry="3" fill="#ff7675" opacity="0.6"/>
+        <ellipse cx="66" cy="56" rx="5" ry="3" fill="#ff7675" opacity="0.6"/>
+        <path d="M44,62 Q50,68 56,62" stroke="#d63031" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="paimon-level-badge">AR 12</div>
+    </div>
+    <div class="paimon-info-box">
+      <div class="paimon-title">Kala (Pemandu Waktu)</div>
+      <div class="paimon-sub">✦ Tekan ESC / Klik untuk Menu</div>
+    </div>
+  </div>
+
+    <div class="quest-hud">
+      <div class="quest-hud-badge">Misi Sejarah: Politik Etis</div>
+      <div class="quest-hud-title" id="questTitle">Menemui Mr. C.Th. van Deventer</div>
+      <div class="quest-hud-desc" id="questDesc">Dekati Mr. Van Deventer di pelataran depan untuk memahami usulan Politik Balas Budi (Een Eereschuld).</div>
+      <div class="quest-step-pill" id="questStep">✦ Langkah: 1 / 6</div>
+    </div>
+
+    <div class="top-action-bar">
+      <!-- Player Profile & Database Points HUD -->
+      <button class="hud-chip-btn active-gold" id="openPlayerProfileBtn" title="Ganti Nama Player / Peneliti">
+        👤 <span id="hudPlayerName">Pengelana</span>
+      </button>
+      <div class="hud-stat-pill" title="Kesehatan Pemain (HP)">
+        <span>❤️ HP:</span>
+        <div class="hud-hp-bar-outer">
+          <div class="hud-hp-bar-inner" id="hudHpBar"></div>
+        </div>
+        <span id="hudHpText">100/100</span>
+      </div>
+      <div class="hud-stat-pill gold" title="Poin Sejarah (Tersimpan di Database)">
+        ⭐ <span id="hudPlayerPoints">0</span> Poin
+      </div>
+      <button class="hud-chip-btn active-gold" id="btnOpenHistoryQuest" title="Ambil Random History Quest Politik Etis [Q]">
+        📜 History Quest [Q]
+      </button>
+      <button class="hud-chip-btn" id="btnOpenLeaderboard" title="Papan Peringkat Database Siswa">
+        🏅 Peringkat
+      </button>
+
+      <button class="hud-chip-btn" id="audioToggleBtn">
+        <span id="audioIcon">🔊</span> <span id="audioLabel">Audio ON</span>
+      </button>
+      <button class="hud-chip-btn active" id="voiceModeToggleBtn" title="Ganti Mode Suara: Suara Manusia (TTS) / Blip SFX">
+        <span id="voiceModeIcon">🎙️</span> <span id="voiceModeLabel">Suara: Manusia (TTS)</span>
+      </button>
+      <button class="hud-chip-btn active-gold" id="openInfographicBtn" title="Buka Infografis Trilogi Van Deventer sesuai bagan sejarah">
+        📜 Alur Infografis
+      </button>
+      <button class="hud-chip-btn" id="openSummaryBtn">
+        📖 Rangkuman Lengkap
+      </button>
+      <button class="hud-chip-btn active-gold" id="switchCharBtn" title="Ganti Karakter Aktif (Naruto Uzumaki / Super Mario) [C]">
+        🍥 Naruto (Ubah: Mario)
+      </button>
+      <button class="hud-chip-btn active-gold" id="openQuizBtn" title="Mulai Ujian Evaluasi Kebangkitan Nasional & Dapatkan Sertifikat Nilai">
+        📝 Ujian Kuis
+      </button>
+    </div>
+
+    <div class="top-right-group">
+      <div class="minimap-container">
+        <canvas id="minimapCanvas"></canvas>
+        <div class="minimap-center-pin"></div>
+      </div>
+      <div class="hud-btn-group">
+        <button class="hud-chip-btn" id="openAchieveBtn">
+          🏆 Pencapaian (<span id="achieveCountBadge">0/6</span>)
+        </button>
+        <button class="hud-chip-btn" id="howToPlayBtn">
+          ❓ Kontrol
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interaction Prompt -->
+  <div class="interaction-prompt" id="interactionPrompt">
+    <span class="key-badge">E</span>
+    <span id="interactionText">Bicara dengan Tokoh</span>
+  </div>
+
+
+  <!-- GENSHIN GADGET / SKILL BAR (BOTTOM RIGHT) -->
+  <div class="genshin-gadget-bar">
+    <div class="gadget-btn" id="btnSonar" title="Kompas Sonar Peninggalan Megalitikum [T]">
+      <span class="gadget-label">Sonar Relik [T]</span>
+      <span class="gadget-icon">🧭</span>
+      <span class="gadget-key-badge">T</span>
+    </div>
+    <div class="gadget-btn" id="btnBag" title="Tas Inventaris Dokumen Sejarah [B]">
+      <span class="gadget-label">Tas Dokumen [B]</span>
+      <span class="gadget-icon">🎒</span>
+      <span class="gadget-key-badge">B</span>
+    </div>
+    <div class="gadget-btn" id="btnPhoto" title="Kamera Antik Batavia [K]">
+      <span class="gadget-label">Kamera [K]</span>
+      <span class="gadget-icon">📸</span>
+      <span class="gadget-key-badge">K</span>
+    </div>
+    <div class="gadget-btn main-btn" id="btnVision" title="Lensa Penglihatan Sejarah (Elemental Vision) [V]">
+      <span class="gadget-label">Lensa Visi [V]</span>
+      <span class="gadget-icon">👁️</span>
+      <span class="gadget-key-badge">V</span>
+    </div>
+  </div>
+
+  <!-- HISTORICAL VISION VIGNETTE LAYER -->
+  <div id="visionVignette">
+    <div class="vision-runes">✦ LENSA PENGLIHATAN SEJARAH AKTIF ✦</div>
+  </div>
+
+  <!-- Mobile Controls -->
+  <div class="mobile-controls" id="mobileControls">
+    <div class="dpad">
+      <div class="dpad-btn dpad-up" data-key="ArrowUp">▲</div>
+      <div class="dpad-btn dpad-left" data-key="ArrowLeft">◀</div>
+      <div class="dpad-btn dpad-right" data-key="ArrowRight">▶</div>
+      <div class="dpad-btn dpad-down" data-key="ArrowDown">▼</div>
+    </div>
+    <div class="mobile-actions-wrap">
+      <div class="mobile-sprint-btn" id="mobileSprintBtn">LARI</div>
+      <div class="mobile-sprint-btn" id="mobileJumpBtn" style="background: rgba(30, 41, 59, 0.85); border-color: #d4af37;">LOMPAT</div>
+      <div class="mobile-sprint-btn" id="mobilePunchBtn" style="background: rgba(229, 80, 57, 0.88); border-color: #ffd32a;">TINJU</div>
+      <div class="mobile-sprint-btn" id="mobileAttackBtn" style="background: rgba(183, 21, 64, 0.85); border-color: #e55039;">TENDANG</div>
+      <div class="mobile-sprint-btn" id="mobileSwitchCharBtn" style="background: rgba(44, 62, 80, 0.9); border-color: #f1c40f;" title="Ganti Karakter: Naruto / Mario">UBAH</div>
+      <div class="mobile-sprint-btn mobile-quest-btn" id="mobileQuestBtn" title="Mulai History Quest">QUEST [Q]</div>
+      <div class="mobile-action-btn" id="mobileActionBtn">
+        <span>AKSI</span>
+        <small style="font-size: 10px;">[E]</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENSHIN DIALOGUE & CUTSCENE SYSTEM -->
+  <div id="dialogue-layer">
+    <div class="dialogue-stage">
+      <div class="stage-character left" id="speakerStage">
+        <canvas id="speakerAvatarCanvas" class="character-avatar-canvas"></canvas>
+      </div>
+    </div>
+
+    <div class="dialogue-box-container">
+      <div class="dialogue-box">
+        <div class="speaker-nameplate">
+          <span class="role-badge" id="dialogueRole">✦ POLITIK ETIS ✦</span>
+          <span class="speaker-name" id="dialogueName">C.Th. van Deventer</span>
+        </div>
+
+        <div class="dialogue-content" id="dialogueContent">
+          Selamat datang di era awal abad ke-20 Hindia Belanda...
+          <span class="dialogue-cursor"></span>
+        </div>
+
+        <div class="dialogue-choices" id="dialogueChoices"></div>
+
+        <div class="dialogue-footer">
+          <div class="dialogue-hint">
+            <span>Tekan <strong style="color: var(--genshin-gold);">Spasi / Enter / Klik</strong> untuk lanjut</span>
+          </div>
+          <div class="dialogue-controls-mini">
+            <button class="mini-btn" id="autoDialogueBtn">▶ Auto: OFF</button>
+            <button class="mini-btn" id="skipDialogueBtn">⏭ Lewati</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL INFOGRAFIS TRILOGI VAN DEVENTER (REPLIKA BAGAN POSTER SEJARAH) -->
+  <div class="modal-overlay" id="infographicModal">
+    <div class="infographic-card">
+      <div class="infographic-header">
+        <div class="infographic-globe-deco">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#644928" stroke-width="3">
+            <circle cx="50" cy="50" r="44" stroke="#7b241c" stroke-width="4"/>
+            <ellipse cx="50" cy="50" rx="44" ry="18"/>
+            <line x1="50" y1="6" x2="50" y2="94"/>
+            <line x1="6" y1="50" x2="94" y2="50"/>
+            <path d="M22,25 Q50,40 78,25 M22,75 Q50,60 78,75" stroke="#8b5a2b"/>
+          </svg>
+        </div>
+        <div class="infographic-title-wrap">
+          <div class="infographic-supertitle">TRILOGI VAN DEVENTER</div>
+          <div class="infographic-subtitle">POLITIK ETIS / BALAS BUDI</div>
+        </div>
+        <button class="modal-close" id="closeInfographicModal" style="color: #644928; font-size: 28px;">&times;</button>
+      </div>
+      <div class="infographic-body" id="infographicBodyContent">
+        <!-- Rendered via renderInfographicModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PENJELASAN SEJARAH TIAP BABAK / QUEST RECAP -->
+  <div class="modal-overlay" id="chapterRecapModal">
+    <div class="recap-card">
+      <div class="recap-header">
+        <div class="recap-tag" id="recapBadge">✦ BABAK 1 SELESAI: LATAR BELAKANG ✦</div>
+        <button class="modal-close" id="closeRecapModal">&times;</button>
+      </div>
+      <div class="recap-body">
+        <div class="recap-title" id="recapTitle">Latar Belakang Kebijakan Politik Etis</div>
+        <div class="recap-quote-box" id="recapQuote">"Bukan bantuan kemurahan hati, melainkan pelunasan utang kehormatan moral yang wajib dikembalikan."</div>
+        <div class="recap-text-block" id="recapDesc">
+          <!-- Text dynamically loaded from INFOGRAPHIC_TIMELINE_DATA -->
+        </div>
+        <div class="recap-quiz-wrap">
+          <div class="recap-quiz-title"><span>💡</span> Refleksi Kilat: Uji Pemahaman Sejarah</div>
+          <div id="recapQuizQuestion" style="font-size: 13px; margin-bottom: 8px; font-weight: 600;"></div>
+          <div id="recapQuizOptions"></div>
+          <div class="recap-feedback" id="recapQuizFeedback"></div>
+        </div>
+      </div>
+      <div class="recap-footer">
+        <button class="btn-recap-infographic" id="recapViewInfographicBtn">📜 Lihat Bagan Infografis</button>
+        <button class="btn-recap-next" id="recapContinueBtn">Lanjut ke Babak Berikutnya ➔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENT BANNER -->
+  <div id="achievement-banner">
+    <div class="achievement-icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+    </div>
+    <div class="achievement-info">
+      <div class="achievement-tag">✦ Pencapaian Diraih! ✦</div>
+      <div class="achievement-title" id="achieveBannerTitle">Irigasi & Dilema Agraria</div>
+      <div class="achievement-desc" id="achieveBannerDesc">Menganalisis pembangunan bendungan dan saluran pengairan era Politik Etis.</div>
+    </div>
+    <div class="achievement-reward">
+      <span>✦</span> +50 Poin
+    </div>
+  </div>
+
+  <!-- GENSHIN IMPACT QUEST CLEAR BANNER POP-UP -->
+  <div id="questClearBanner" class="quest-clear-banner">
+    <div class="quest-clear-ribbon">
+      <div class="quest-clear-tag">✦ MISI SEJARAH SELESAI ✦</div>
+      <div class="quest-clear-title" id="questClearTitle">Menemui Mr. C.Th. van Deventer</div>
+      <div class="quest-clear-exp" id="questClearExp">+100 EXP SEJARAH</div>
+    </div>
+  </div>
+
+  <!-- MODAL PETI HARTA KARUN ARTEFAK DITEMUKAN -->
+  <div class="modal-overlay" id="chestFoundModal">
+    <div class="chest-found-card">
+      <div class="chest-found-glow"></div>
+      <div class="chest-found-icon">🎁</div>
+      <div class="chest-found-tag">✦ PETI ARTEFAK SEJARAH DITEMUKAN ✦</div>
+      <div class="chest-found-title" id="chestModalTitle">Peti Relik Megalitikum</div>
+      <div class="chest-found-item" id="chestModalItem">Artefak Kapak Persegi & Manik Batu</div>
+      <div class="chest-found-desc" id="chestModalDesc">Bukti peradaban agraris mandiri leluhur Nusantara sebelum era kolonialisme.</div>
+      <div class="chest-found-reward" id="chestModalExp">+100 EXP</div>
+      <button class="btn-recap-next" onclick="closeChestFoundModal()" style="margin-top: 16px;">Simpan ke Tas Dokumen 🎒</button>
+    </div>
+  </div>
+
+  <!-- MODAL UJIAN EVALUASI KEBANGKITAN NASIONAL & SERTIFIKAT DIGITAL -->
+  <div class="modal-overlay" id="evaluationQuizModal">
+    <div class="quiz-modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>📜</span> Ujian Evaluasi: Trilogi Politik Etis & Kebangkitan Nasional
+        </div>
+        <button class="modal-close" onclick="closeEvaluationQuizModal()">&times;</button>
+      </div>
+
+      <!-- Section 1: Intro / Input Nama Siswa -->
+      <div id="quizIntroSection" class="quiz-section">
+        <div class="quiz-intro-box">
+          <div class="quiz-badge-large">🎓</div>
+          <h3>Evaluasi Pemahaman Materi Sejarah</h3>
+          <p>Uji kompetensi akademik mengenai latar belakang <strong>Politik Etis, Trilogi Van Deventer, realitas penyimpangan, hingga lahirnya Budi Utomo 1908</strong>. Selesaikan 10 butir soal untuk mendapatkan <strong>Sertifikat Digital Prestasi Siswa</strong>!</p>
+          <div class="student-input-group">
+            <label for="studentNameInput">Nama Lengkap Siswa / Peneliti:</label>
+            <input type="text" id="studentNameInput" placeholder="Masukkan nama kamu di sini..." maxlength="45">
+          </div>
+          <button class="btn-start-quiz" onclick="startEvaluationQuiz()">Mulai Ujian Evaluasi ➔</button>
+        </div>
+      </div>
+
+      <!-- Section 2: Soal Interaktif Berwaktu -->
+      <div id="quizQuestionSection" class="quiz-section" style="display: none;">
+        <div class="quiz-header-bar">
+          <span class="quiz-step-tag" id="quizProgressBadge">SOAL 1 / 10</span>
+          <span class="quiz-score-tag">Nilai Maks: 100</span>
+        </div>
+        <div class="quiz-question-card">
+          <h4 id="quizQuestionText">Pertanyaan soal sejarah...</h4>
+          <div class="quiz-options-grid" id="quizOptionsContainer"></div>
+          <div id="quizFeedbackBox"></div>
+        </div>
+      </div>
+
+      <!-- Section 3: Sertifikat Digital Resmi Nilai -->
+      <div id="quizResultSection" class="quiz-section" style="display: none;">
+        <div class="certificate-frame" id="printableCertificate">
+          <div class="cert-border-outer">
+            <div class="cert-border-inner">
+              <div class="cert-header">
+                <div class="cert-emblem">✦ REPUBLIK INDONESIA — PENDIDIKAN SEJARAH ✦</div>
+                <h2>PIAGAM PENGHARGAAN PRESTASI</h2>
+                <div class="cert-subtitle">Diberikan sebagai bukti kelulusan evaluasi materi pembelajaran sejarah:</div>
+                <div class="cert-topic">POLITIK ETIS & KEBANGKITAN NASIONAL 1908</div>
+              </div>
+              <div class="cert-body">
+                <div class="cert-to">Diberikan kepada:</div>
+                <div class="cert-name" id="certStudentName">Nama Siswa</div>
+                <div class="cert-statement">Telah berhasil menyelesaikan rangkaian ekspedisi edukatif 2D dan ujian kompetensi pemahaman materi dengan perolehan:</div>
+                <div class="cert-score-grid">
+                  <div class="cert-score-box">
+                    <span class="cs-label">SKOR AKHIR</span>
+                    <span class="cs-val" id="certScore">100 / 100</span>
+                  </div>
+                  <div class="cert-score-box">
+                    <span class="cs-label">PREDIKAT</span>
+                    <span class="cs-val" id="certGrade">A+ (Istimewa)</span>
+                  </div>
+                  <div class="cert-score-box">
+                    <span class="cs-label">BINTANG PRESTASI</span>
+                    <span class="cs-val" id="certStars">★★★★★</span>
+                  </div>
+                </div>
+                <div class="cert-predicate-text" id="certPredicate">Sangat Mahir & Menguasai Sejarah Politik Etis</div>
+              </div>
+              <div class="cert-footer">
+                <div class="cert-sig">
+                  <div class="sig-line"></div>
+                  <div class="sig-title">Mr. C.Th. van Deventer & Pemandu Sejarah</div>
+                </div>
+                <div class="cert-date-box">
+                  <span>Diterbitkan pada:</span>
+                  <strong id="certDate">12 September 2026</strong>
+                </div>
+                <div class="cert-sig">
+                  <div class="sig-line"></div>
+                  <div class="sig-title">dr. Soetomo (Budi Utomo 1908)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-actions">
+          <button class="btn-cert-print" onclick="printCertificate()">🖨️ Cetak / Simpan PDF Sertifikat</button>
+          <button class="btn-cert-restart" onclick="openEvaluationQuizModal()">🔄 Ulangi Ujian</button>
+          <button class="btn-cert-close" onclick="closeEvaluationQuizModal()">Tutup & Kembali ke Game ✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL RANDOM HISTORY QUEST (POLITIK ETIS / BALAS BUDI) -->
+  <div class="modal-overlay" id="historyQuestModal">
+    <div class="history-quest-card">
+      <div class="quest-modal-header">
+        <div class="quest-category-badge" id="hqCategoryBadge">BACKGROUND • EASY</div>
+        <div class="quest-title-text" id="hqTitle">Jejak Balas Budi</div>
+        <button class="modal-close" id="closeHistoryQuestModal">&times;</button>
+      </div>
+      <div class="quest-modal-body">
+        <div class="quest-story-box">
+          <div class="story-label">📖 Konteks Sejarah:</div>
+          <p id="hqStory">Pada masa kolonial, muncul kritik terhadap kebijakan Belanda...</p>
+        </div>
+
+        <div class="quest-question-box">
+          <div class="question-label">❓ Pertanyaan:</div>
+          <h3 id="hqQuestion">Apa salah satu latar belakang munculnya Politik Etis?</h3>
+        </div>
+
+        <div class="quest-options-container" id="hqOptionsContainer">
+          <!-- Rendered via HistoryQuestManager -->
+        </div>
+
+        <div class="quest-feedback-container" id="hqFeedbackContainer" style="display: none;">
+          <!-- Feedback Benar / Salah & Penjelasan -->
+        </div>
+      </div>
+
+      <div class="quest-modal-footer">
+        <div class="quest-footer-stat">
+          <span class="stat-label">❤️ HP:</span>
+          <div class="quest-hp-bar-wrap">
+            <div class="quest-hp-bar-fill" id="hqHpBar" style="width: 100%;"></div>
+          </div>
+          <span class="stat-val" id="hqHpText">100/100</span>
+        </div>
+        <div class="quest-footer-stat">
+          <span class="stat-label">⭐ POINT:</span>
+          <span class="stat-val-gold" id="hqPointsText">0</span>
+        </div>
+        <div class="quest-footer-stat">
+          <span class="stat-label">👤 PEMAIN:</span>
+          <span class="stat-val" id="hqPlayerName">Pengelana</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL INPUT NAMA PLAYER (DATABASE SYNC) -->
+  <div class="modal-overlay" id="playerNameModal">
+    <div class="modal-card" style="max-width: 480px; text-align: center;">
+      <div class="modal-header">
+        <div class="modal-title" style="margin: 0 auto;">
+          <span>🎓</span> Profil Peneliti Sejarah
+        </div>
+      </div>
+      <div class="modal-body" style="padding: 24px 20px;">
+        <div style="font-size: 42px; margin-bottom: 10px;">📜</div>
+        <h3 style="color: var(--genshin-gold-light); font-family: 'Cinzel', serif; margin-bottom: 8px;">Selamat Datang di Ekspedisi Nusantara!</h3>
+        <p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.6; margin-bottom: 18px;">
+          Masukkan nama kamu untuk memulai petualangan. Seluruh <strong>poin sejarah</strong> yang kamu raih akan tersimpan secara otomatis ke dalam database sistem!
+        </p>
+        <div class="student-input-group" style="text-align: left; margin-bottom: 18px;">
+          <label for="playerNameInputModal" style="display: block; font-size: 12px; font-weight: 700; color: var(--genshin-gold); margin-bottom: 6px;">Nama Lengkap Siswa / Peneliti:</label>
+          <input type="text" id="playerNameInputModal" placeholder="Contoh: Budi Santoso" maxlength="35" style="width: 100%; box-sizing: border-box; padding: 12px 14px; background: rgba(0,0,0,0.4); border: 1.5px solid var(--genshin-gold); border-radius: 10px; color: #fff; font-size: 14px; font-family: inherit;">
+        </div>
+        <button class="btn-start-quiz" id="savePlayerNameBtn" style="width: 100%;">Mulai Petualangan & Simpan ke Database ➔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL LEADERBOARD DATABASE -->
+  <div class="modal-overlay" id="leaderboardModal">
+    <div class="modal-card" style="max-width: 540px;">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🏅</span> Papan Peringkat Peneliti Sejarah
+        </div>
+        <button class="modal-close" id="closeLeaderboardModal">&times;</button>
+      </div>
+      <div class="modal-body" id="leaderboardList" style="padding: 18px;">
+        <!-- Loaded via showLeaderboard() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIMON PAUSE MENU MODAL -->
+  <div class="modal-overlay" id="paimonMenuModal">
+    <div class="paimon-menu-card">
+      <div class="paimon-menu-header">
+        <div class="paimon-profile-head">
+          <div class="paimon-profile-avatar">⏳</div>
+          <div class="paimon-profile-info">
+            <h3>Pengelana Waktu Hindia Belanda</h3>
+            <p>Tingkat Eksplorasi Nusantara: Level 12 (Masa Politik Etis 1901)</p>
+          </div>
+        </div>
+        <button class="modal-close" id="closePaimonMenu">&times;</button>
+      </div>
+      <div class="paimon-grid">
+        <div class="paimon-tile" id="tileTimeSkip">
+          <div class="paimon-tile-icon">☀️</div>
+          <div class="paimon-tile-title">Waktu Dunia</div>
+        </div>
+        <div class="paimon-tile" id="tileBag">
+          <div class="paimon-tile-icon">🎒</div>
+          <div class="paimon-tile-title">Tas Dokumen</div>
+        </div>
+        <div class="paimon-tile" id="tileInfographic">
+          <div class="paimon-tile-icon">📜</div>
+          <div class="paimon-tile-title">Alur Infografis</div>
+        </div>
+        <div class="paimon-tile" id="tileSwitchChar">
+          <div class="paimon-tile-icon">👥</div>
+          <div class="paimon-tile-title">Ganti Karakter</div>
+        </div>
+        <div class="paimon-tile" id="tileTokoh">
+          <div class="paimon-tile-icon">📜</div>
+          <div class="paimon-tile-title">Galeri Tokoh</div>
+        </div>
+        <div class="paimon-tile" id="tileAchieve">
+          <div class="paimon-tile-icon">🏆</div>
+          <div class="paimon-tile-title">Pencapaian</div>
+        </div>
+        <div class="paimon-tile" id="tilePhoto">
+          <div class="paimon-tile-icon">📸</div>
+          <div class="paimon-tile-title">Kamera Foto</div>
+        </div>
+        <div class="paimon-tile" id="tileAudio">
+          <div class="paimon-tile-icon">🔊</div>
+          <div class="paimon-tile-title">Audio & Suara</div>
+        </div>
+        <div class="paimon-tile" id="tileHelp">
+          <div class="paimon-tile-icon">❓</div>
+          <div class="paimon-tile-title">Panduan Main</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORICAL BAG / INVENTORY MODAL -->
+  <div class="modal-overlay" id="bagModal">
+    <div class="bag-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🎒</span> Tas Dokumen Sejarah & Arsip Kolonial
+        </div>
+        <button class="modal-close" id="closeBagModal">&times;</button>
+      </div>
+      <div class="bag-body" id="bagItemsContainer">
+        <!-- Rendered via renderBagItems() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCUMENT DETAIL MODAL -->
+  <div class="modal-overlay" id="docDetailModal">
+    <div class="doc-detail-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; font-weight: 800; color: #7b241c; letter-spacing: 1.5px;">✦ ARSIP SEJARAH NUSANTARA ✦</span>
+        <button class="modal-close" id="closeDocDetail" style="color: #644928;">&times;</button>
+      </div>
+      <div class="doc-detail-title" id="docTitle">Judul Dokumen</div>
+      <div class="doc-detail-quote" id="docQuote">"Kutipan otentik naskah bersejarah..."</div>
+      <div class="doc-detail-text" id="docText">Isi lengkap dan ulasan historis...</div>
+      <button class="btn-recap-next" id="docCloseBtn" style="margin-top: 10px; align-self: flex-end;">Tutup Naskah</button>
+    </div>
+  </div>
+
+  <!-- PHOTO MODE LAYER -->
+  <div id="photoModeLayer">
+    <div class="photo-viewport-frame">
+      <div class="photo-watermark-top">✦ KRONIKA NUSANTARA ✦</div>
+      <div class="photo-watermark-bottom">
+        <span>ERA POLITIK ETIS & BALAS BUDI (1901)</span>
+        <span id="photoFilterLabel">FILTER: VINTAGE 1901</span>
+      </div>
+    </div>
+    <div class="photo-controls-bar">
+      <button class="photo-btn" id="photoFilterBtn">🎨 Ganti Filter</button>
+      <button class="photo-btn" id="photoPoseBtn">🕺 Ganti Pose</button>
+      <button class="photo-shutter-btn" id="photoShutterBtn">📸 Jepret Foto</button>
+      <button class="photo-btn" id="photoExitBtn">❌ Keluar</button>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal-overlay" id="achieveModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🏆</span> Buku Pencapaian Politik Etis
+        </div>
+        <button class="modal-close" id="closeAchieveModal">&times;</button>
+      </div>
+      <div class="modal-body" id="achieveModalList"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="summaryModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>📚</span> Ensiklopedia Lengkap Kebijakan Politik Etis / Balas Budi
+        </div>
+        <button class="modal-close" id="closeSummaryModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="edu-section">
+          <h5>1. Akar Sejarah & Peninggalan Prasejarah Nusantara</h5>
+          <p>Jauh sebelum kedatangan bangsa Eropa, Nusantara telah memiliki peradaban agraris mandiri yang kaya, dibuktikan oleh <strong>Menhir Megalitikum, Dolmen, dan Punden Berundak</strong>. Selama berabad-abad, kekayaan bumi pertiwi ini disedot melalui monopoli VOC dan sistem <strong>Tanam Paksa (Cultuurstelsel)</strong> hingga menyisakan kelaparan hebat. Atas dasar itulah, suara nurani menuntut Belanda mengembalikan <em>Utang Kehormatan</em> melalui Politik Etis.</p>
+        </div>
+        <div class="edu-section">
+          <h5>2. Latar Belakang & "Een Eereschuld" (Utang Kehormatan)</h5>
+          <p>Pada 1860, <strong>Eduard Douwes Dekker (Multatuli)</strong> menulis novel <em>Max Havelaar</em> yang mengguncang nurani publik Eropa atas penindasan Tanam Paksa di Lebak Banten. Pada 1899, <strong>C.Th. van Deventer</strong> menulis artikel <em>"Een Eereschuld"</em> di majalah <em>De Gids</em>, membuktikan Belanda berutang budi 187 juta gulden surplus kepada rakyat pribumi. Ratu Wilhelmina meresmikannya dalam Pidato Takhta September 1901.</p>
+        </div>
+        <div class="edu-section">
+          <h5>3. Trilogi Van Deventer & Realitas Penyimpangannya</h5>
+          <p>• <strong>Irigasi (Pengairan)</strong>: Pembangunan bendungan dan saluran air. <em>Penyimpangan</em>: Air dialirkan secara diskriminatif pada siang hari ke perkebunan tebu & tembakau pengusaha Belanda, sementara sawah rakyat hanya mendapat sisa air malam hari.</p>
+          <p>• <strong>Edukasi (Pendidikan)</strong>: Pembukaan sekolah bagi penduduk pribumi (Sekolah Rakyat, OSVIA, STOVIA). <em>Penyimpangan</em>: Ditujukan untuk mencetak pegawai rendahan berupah murah (ambtenaar). Namun, efek bumerangnya melahirkan <strong>Kaum Intelektual Terpelajar</strong> yang memimpin pergerakan nasional!</p>
+          <p>• <strong>Emigrasi (Transmigrasi)</strong>: Pemindahan penduduk dari Jawa ke Sumatra (Lampung 1905). <em>Penyimpangan</em>: Dijadikan kedok memasok kuli kontrak murah di perkebunan Deli yang diikat aturan kejam cambuk <em>Poenale Sanctie</em>.</p>
+        </div>
+        <div class="edu-section">
+          <h5>4. Dampak Politik Etis di 4 Bidang</h5>
+          <p>• <strong>Pendidikan</strong>: Lahir kaum elite terpelajar, melek huruf naik, dan berdirinya sekolah swasta nasional (Taman Siswa & Muhammadiyah).</p>
+          <p>• <strong>Ekonomi</strong>: Pertanian komersial melesat, namun rakyat tetap miskin terbebani pajak tanah (landrente).</p>
+          <p>• <strong>Sosial</strong>: Stratifikasi baru kaum intelektual menggeser dominasi mutlak feodalisme bangsawan kolot; lahir emansipasi wanita (R.A. Kartini).</p>
+          <p>• <strong>Politik</strong>: Kelahiran organisasi pergerakan modern pertama <strong>Budi Utomo (20 Mei 1908)</strong>, <strong>Sarekat Islam (1912)</strong>, dan <strong>Indische Partij (1912)</strong> yang menuntut kemerdekaan.</p>
+        </div>
+        <div class="edu-section">
+          <h5>5. Analisis "Senjata Makan Tuan" (Dua Sisi Mata Uang)</h5>
+          <div class="comparative-table-card">
+            <div class="comp-col negative">
+              <h6>⚠️ Niat & Eksploitasi Kolonial</h6>
+              <ul>
+                <li>Irigasi untuk membasahi tebu pabrik Belanda.</li>
+                <li>Edukasi sekadar mencetak juru tulis murah (*ambtenaar*).</li>
+                <li>Emigrasi untuk memasok kuli kontrak Deli berdisiplin cambuk.</li>
+              </ul>
+            </div>
+            <div class="comp-col positive">
+              <h6>⚡ Efek Bumerang (Bagi Indonesia)</h6>
+              <ul>
+                <li>Sawah rakyat tetap belajar teknologi pengairan modern.</li>
+                <li>Kaum intelektual STOVIA berbalik memimpin pergerakan bangsa.</li>
+                <li>Transmigrasi meleburkan batas suku Jawa & Sumatra menuju satu bangsa!</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top: 10px;">Politik Etis berakhir akibat depresi ekonomi dunia (*Malaise 1929*), dan terbukti menjadi <strong>"Senjata Makan Tuan"</strong> yang menghantarkan bangsa Indonesia menuju proklamasi Kemerdekaan 17 Agustus 1945!</p>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 12px 24px; border-top: 1px solid var(--genshin-border); display: flex; justify-content: space-between; align-items: center; background: rgba(14, 18, 28, 0.95);">
+        <span style="font-size: 11px; color: var(--genshin-gold-light);">✦ Bahan Pembelajaran Kurikulum Sejarah Indonesia</span>
+        <button class="hud-chip-btn active-gold" id="printSummaryBtn" onclick="printSummaryDocument()">
+          🖨️ Cetak / Simpan PDF Rangkuman
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="tokohModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>👥</span> Tokoh-Tokoh Sentral Era Politik Etis
+        </div>
+        <button class="modal-close" id="closeTokohModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">⚖️</div>
+          <div class="achieve-text">
+            <h4>Conrad Theodor van Deventer (1857–1915)</h4>
+            <p>Ahli hukum Belanda pencetus artikel <em>Een Eereschuld</em> dan perumus konsep Trias Van Deventer (Irigasi, Edukasi, Emigrasi).</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">📖</div>
+          <div class="achieve-text">
+            <h4>Eduard Douwes Dekker / Multatuli (1820–1887)</h4>
+            <p>Mantan asisten residen Lebak yang menulis roman <em>Max Havelaar</em>, membongkar kebiadaban tanam paksa kepada publik Eropa.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">👑</div>
+          <div class="achieve-text">
+            <h4>Ratu Wilhelmina (1880–1962)</h4>
+            <p>Ratu Belanda yang membacakan Pidato Takhta (1901) menandai resmi dimulainya Politik Balas Budi.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">✉️</div>
+          <div class="achieve-text">
+            <h4>Raden Ajeng Kartini (1879–1904)</h4>
+            <p>Pahlawan emansipasi wanita yang memperjuangkan hak pendidikan perempuan pribumi melalui surat-suratnya kepada sahabat Belanda.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">🩺</div>
+          <div class="achieve-text">
+            <h4>dr. Wahidin Soedirohoesodo & dr. Soetomo</h4>
+            <p>Dokter dan intelektual STOVIA pelopor dana beasiswa (*studiefonds*) dan pendiri organisasi pergerakan modern pertama Budi Utomo (1908).</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">🌾</div>
+          <div class="achieve-text">
+            <h4>Pak Kromo & Amat Kuli Deli</h4>
+            <p>Representasi rakyat jelata dan petani yang merasakan langsung getirnya diskriminasi saluran air dan hukuman kerja paksa <em>Poenale Sanctie</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="howToPlayModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span>🎮</span> Panduan Eksplorasi & Suara Karakter
+        </div>
+        <button class="modal-close" id="closeHowToPlayModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">🎙️</div>
+          <div class="achieve-text">
+            <h4>Suara Karakter Unik (TTS & Blip)</h4>
+            <p>Setiap tokoh memiliki <strong>suara berbeda-beda</strong>! Kamu dapat mendengarkan narasi suara manusia asli (Web Speech TTS) dengan intonasi berbeda per karakter, atau suara blip chiptune khusus tokoh. Klik tombol <strong>Suara: Manusia (TTS)</strong> di atas untuk berganti mode.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">🕹️</div>
+          <div class="achieve-text">
+            <h4>Peta Luas & Menhir Megalitikum Prasejarah</h4>
+            <p>Peta kini jauh lebih luas! Jelajahi <strong>Lembah Megalitikum</strong> di sebelah barat untuk melihat Menhir, Dolmen, dan Sarkofagus batu peninggalan prasejarah Nusantara.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">⚡</div>
+          <div class="achieve-text">
+            <h4>Lari Cepat (Sprint)</h4>
+            <p>Tahan tombol <strong>Shift</strong> pada keyboard atau tombol <strong>LARI</strong> di HP untuk melintasi peta luas dengan cepat!</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">👥</div>
+          <div class="achieve-text">
+            <h4>2 Karakter Pilihan: Naruto & Super Mario</h4>
+            <p>Pilih dan ubah karakter sesukamu! Klik tombol <strong>Ubah Karakter [C]</strong> di atas atau tombol <strong>UBAH</strong> di HP untuk berganti antara <strong>Naruto Uzumaki</strong> dan <strong>Super Mario</strong>.</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">🥊</div>
+          <div class="achieve-text">
+            <h4>Aksi Kombo, Lompat & Pukulan Tinju</h4>
+            <p>Kedua karakter memiliki animasi lengkap: <strong>Jalan (Walk)</strong>, <strong>Lari Cepat (Run)</strong>, <strong>Lompat (Jump)</strong>, <strong>Pukulan Tinju (Punch)</strong> [J / Tombol TINJU di HP], <strong>Tendangan Kombo (Kick)</strong> [K / Tombol TENDANG di HP], dan <strong>Jurus Spesial</strong> [L] (Rasengan Naruto / Fireball Mario)!</p>
+          </div>
+        </div>
+        <div class="achieve-item unlocked">
+          <div class="achieve-badge">📱</div>
+          <div class="achieve-text">
+            <h4>Dukungan Penuh HP Android & iPhone / iPad (iOS)</h4>
+            <p>Mainkan langsung di browser ponsel tanpa install aplikasi! Dilengkapi kontrol sentuh responsif: D-Pad 4 arah, tombol <strong>LARI</strong>, <strong>LOMPAT</strong>, <strong>TINJU</strong>, <strong>TENDANG</strong>, <strong>UBAH</strong>, dan <strong>AKSI [E]</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <!-- Modular Scripts in dependency order -->
+  <script defer src="js/audio.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/renderer.js"></script>
+  <script defer src="js/sprite_animator.js"></script>
+  <script defer src="js/world.js"></script>
+  <script defer src="js/dialogue.js"></script>
+  <script defer src="js/history_quest_manager.js"></script>
+  <script defer src="js/quest.js"></script>
+  <script defer src="js/ui.js"></script>
+  <script defer src="js/main.js"></script>
+</body></html>

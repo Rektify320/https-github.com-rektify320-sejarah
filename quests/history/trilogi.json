@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PE_TR001",
+    "category": "TRILOGI",
+    "difficulty": "EASY",
+    "title": "Tiga Pilar Politik Etis",
+    "story": "Untuk mewujudkan perbaikan kesejahteraan di tanah jajahan, dirumuskan tiga program utama yang dikenal sebagai Trilogi Van Deventer.",
+    "question": "Program apa sajakah yang menyusun Trilogi Van Deventer?",
+    "options": [
+      "Irigasi, Edukasi, dan Transmigrasi (Emigrasi)",
+      "Monopoli, Devide et Impera, dan Kerja Rodi",
+      "Industrialisasi, Militerisasi, dan Kolonisasi",
+      "Demokrasi, Kapitalisme, dan Feodalisme"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Trilogi Van Deventer terdiri dari 3 program: Irigasi (pengairan), Edukasi (pendidikan), dan Emigrasi/Transmigrasi (perpindahan penduduk)."
+  },
+  {
+    "id": "PE_TR002",
+    "category": "TRILOGI",
+    "difficulty": "MEDIUM",
+    "title": "Pilar Irigasi & Air Kehidupan",
+    "story": "Pemerintah membangun jaringan waduk, bendungan, dan saluran air seperti di Kali Brantas Jawa Timur untuk mendukung sektor pertanian.",
+    "question": "Apa tujuan utama yang dicanangkan dari program Irigasi dalam konsep Politik Etis?",
+    "options": [
+      "Memperbaiki dan menjamin pasokan air bagi lahan pertanian serta sawah rakyat guna mencegah kelaparan",
+      "Mengeringkan seluruh sungai di Jawa agar dapat dibangun rel kereta api",
+      "Menyediakan air bersih hanya untuk kapal-kapal perang Eropa di pelabuhan",
+      "Membangun kolam renang mewah khusus bagi para pejabat gubernemen Belanda"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "Program irigasi ditujukan untuk mengairi persawahan dan perkebunan guna meningkatkan hasil panen dan mencegah bencana kelaparan di Jawa."
+  },
+  {
+    "id": "PE_TR003",
+    "category": "TRILOGI",
+    "difficulty": "MEDIUM",
+    "title": "Cahaya Pendidikan (Edukasi)",
+    "story": "Program kedua mencakup pendirian berbagai jenjang sekolah, mulai dari Sekolah Desa (Volksschool) hingga perguruan kedokteran untuk anak bumiputra.",
+    "question": "Lembaga pendidikan kedokteran bumiputra di Batavia yang didirikan pada era ini dan melahirkan para tokoh pergerakan bernama...",
+    "options": [
+      "STOVIA (School tot Opleiding van Inlandsche Artsen)",
+      "THS (Technische Hoogeschool Bandoeng)",
+      "OSVIA (Opleiding School Voor Inlandsche Ambtenaren)",
+      "Kweekschool voor Onderwijzers"
+    ],
+    "correct_answer": 0,
+    "reward": 20,
+    "damage": 15,
+    "explanation": "STOVIA adalah sekolah dokter Jawa di Batavia yang menjadi kawah candradimuka intelektual bagi dr. Soetomo, dr. Cipto Mangunkusumo, dan para pendiri Budi Utomo."
+  },
+  {
+    "id": "PE_TR004",
+    "category": "TRILOGI",
+    "difficulty": "HARD",
+    "title": "Pilar Emigrasi & Keseimbangan Demografi",
+    "story": "Pulau Jawa pada akhir abad ke-19 mengalami ledakan jumlah penduduk yang sangat padat sehingga lahan garapan petani semakin menyempit.",
+    "question": "Mengapa program Emigrasi / Transmigrasi dipandang penting dalam rencana Trilogi Van Deventer?",
+    "options": [
+      "Untuk meratakan persebaran penduduk dari Pulau Jawa yang padat ke pulau lain yang masih luas dan subur",
+      "Untuk mengasingkan seluruh penduduk pribumi ke benua Australia",
+      "Untuk mengosongkan pulau Jawa agar bisa dibeli seluruhnya oleh pedagang VOC",
+      "Untuk menghapus batas antarpulau di seluruh wilayah Pasifik"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Emigrasi (kelak menjadi cikal bakal transmigrasi nasional) dirancang untuk memindahkan warga Jawa ke Lampung dan Sumatra guna mengatasi krisis kepadatan tanah."
+  },
+  {
+    "id": "PE_TR005",
+    "category": "TRILOGI",
+    "difficulty": "EASY",
+    "title": "Sekolah Desa (Volksschool)",
+    "story": "Di tingkat pedesaan, pemerintah kolonial membuka sekolah dasar 3 tahun dengan bahasa pengantar bahasa daerah.",
+    "question": "Sekolah dasar tingkat desa pada masa kolonial yang mengajarkan baca, tulis, dan hitung dasar dikenal dengan sebutan...",
+    "options": [
+      "Volksschool (Sekolah Rakyat / Desa)",
+      "HBS (Hogere Burgerschool)",
+      "ELS (Europeesche Lagere School)",
+      "MULO (Meer Uitgebreid Lager Onderwijs)"
+    ],
+    "correct_answer": 0,
+    "reward": 10,
+    "damage": 10,
+    "explanation": "Volksschool (Sekolah Desa) adalah jenjang pendidikan 3 tahun paling dasar yang disediakan untuk anak-anak pedesaan bumiputra."
+  },
+  {
+    "id": "PE_TR006",
+    "category": "TRILOGI",
+    "difficulty": "HARD",
+    "title": "Destinasi Perdana Kolonisasi 1905",
+    "story": "Pelaksanaan program perpindahan penduduk pertama yang disponsori pemerintah Hindia Belanda diberangkatkan pada tahun 1905 dari Kedu Jawa Tengah.",
+    "question": "Wilayah manakah di luar Pulau Jawa yang menjadi lokasi tujuan rombongan emigrasi perdana pada tahun 1905?",
+    "options": [
+      "Gedong Tataan di Karesidenan Lampung",
+      "Banjarmasin di Kalimantan Selatan",
+      "Makassar di Sulawesi Selatan",
+      "Merauke di Papua"
+    ],
+    "correct_answer": 0,
+    "reward": 30,
+    "damage": 20,
+    "explanation": "Pada November 1905, sebanyak 155 kepala keluarga dari Kedu Jawa Tengah dipindahkan ke Gedong Tataan, Lampung (tonggak sejarah transmigrasi pertama)."
+  }
+]
